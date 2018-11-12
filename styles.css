@@ -1,0 +1,68 @@
+:root {
+  --font-family: Caveat, 'Dancing Script', cursive;
+}
+
+body {
+  background-image: url(./bg.jpg);
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  position: relative;
+}
+
+canvas {
+  background: none;
+  width: 100vw;
+  height: 100vh;
+  color: #FFFFFF;
+  color: #98a5ab;
+  color: #789fbb;
+  color: #dbd3c2;
+  color: #eeefde;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+section {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  color: #fff;
+}
+
+section .hero-text {
+  flex-direction: column;
+}
+
+section .hero-text>* {
+  margin: 0;
+  text-align: center;
+}
+
+section .hero-text h1 {
+  font-size: 3em;
+}
+
+section .hero-text p {
+  font-size: 2em;
+}
+
+@media screen and (max-width: 480px) {
+  section {
+    bottom: 5%;
+  }
+
+  section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  section .hero-text h1 {
+    font-size: 1.5em;
+  }
+
+  section .hero-text p {
+    font-size: 1em;
+  }
+}
