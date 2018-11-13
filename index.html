@@ -1,50 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <script src="https://unpkg.com/pace-progress@1.0.2/pace.min.js"></script>
+    <style>
+      body.pace-running section,
+      body.pace-running canvas {
+        opacity: 0;
+        transition: all 300ms;
+      }
+      body.pace-done section,
+      body.pace-done canvas {
+        opacity: 1;
+      }
+      .pace {
+        -webkit-pointer-events: none;
+        pointer-events: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      .pace.pace-inactive .pace-progress {
+        display: none;
+      }
+      .pace .pace-progress {
+        position: fixed;
+        z-index: 2000;
+        top: 0;
+        right: 0;
+        height: 5rem;
+        width: 5rem;
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        -ms-transform: translate3d(0, 0, 0) !important;
+        transform: translate3d(0, 0, 0) !important;
+      }
+      .pace .pace-progress:after {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0.5rem;
+        content: attr(data-progress-text);
+        font-family: 'Helvetica Neue', sans-serif;
+        font-weight: 100;
+        font-size: 5rem;
+        line-height: 1;
+        text-align: right;
+        color: rgba(255, 255, 255, 0.8);
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Greha weds Jenil</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Tillana"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/chota@0.5.2/dist/chota.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <meta property="og:url" content="https://grehaweds.jgog.in/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Greha weds Jenil" />
+    <meta
+      property="og:description"
+      content="2 years after their engagement and over 7 years of friendship, Greha & Jenil are getting married!"
+    />
+    <meta property="og:image" content="https://grehaweds.jgog.in/flyer.png" />
+  </head>
 
-<head>
-  <script src="https://unpkg.com/pace-progress@1.0.2/pace.min.js"></script>
-  <style>
-    body.pace-running section, body.pace-running canvas { opacity: 0; transition: all 300ms; } body.pace-done section, body.pace-done canvas { opacity: 1; } .pace { -webkit-pointer-events: none; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; } .pace.pace-inactive .pace-progress { display: none; } .pace .pace-progress { position: fixed; z-index: 2000; top: 0; right: 0; height: 5rem; width: 5rem; -webkit-transform: translate3d(0, 0, 0) !important; -ms-transform: translate3d(0, 0, 0) !important; transform: translate3d(0, 0, 0) !important; } .pace .pace-progress:after { display: block; position: absolute; top: 0; right: .5rem; content: attr(data-progress-text); font-family: "Helvetica Neue", sans-serif; font-weight: 100; font-size: 5rem; line-height: 1; text-align: right; color: rgba(255, 255, 255, 0.8); }
-  </style>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Greha weds Jenil</title>
-  <link href="https://fonts.googleapis.com/css?family=Tillana" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/chota@0.5.2/dist/chota.min.css">
-  <link rel="stylesheet" href="./styles.css">
-  <meta property="og:url" content="https://grehaweds.jgog.in/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Greha weds Jenil" />
-  <meta property="og:description" content="2 years after their engagement and over 7 years of friendship, Greha & Jenil are getting married!" />
-  <meta property="og:image" content="https://grehaweds.jgog.in/flyer.png" />
-</head>
-
-<body>
-  <canvas id="scene"></canvas>
-  <section>
-    <div class="hero-text is-center">
-      <h1>Greha &amp; Jenil
-        are getting married on
-        Jaunary 2, 2019</h1>
-      <p>You are invited! Details will be sent soon.<p>
-          <div class="fb-like" data-href="https://grehaweds.jgog.in/" data-width="400" data-layout="button_count"
-            data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-    </div>
-  </section>
-  <script src="./script.js"></script>
-  <div id="fb-root"></div>
-  <script>
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
-
-</body>
-
+  <body>
+    <canvas id="scene"></canvas>
+    <section>
+      <div class="hero-text is-center">
+        <h1>Greha &amp; Jenil are getting married on Jaunary 2, 2019</h1>
+        <p>You are invited! Details will be sent soon.</p>
+        <p></p>
+        <div>
+          <div
+            class="fb-like"
+            data-href="https://grehaweds.jgog.in/"
+            data-width="400"
+            data-layout="button_count"
+            data-action="like"
+            data-size="small"
+            data-show-faces="true"
+            data-share="true"
+          ></div>
+          <a
+            target="_blank"
+            class="button is-small dark"
+            href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NzJtMGIxajZ2MW1sYW1ubmJ0OXN1OGE0dGMgamVuaWwyN0Bt&amp;tmsrc=jenil27%40gmail.com"
+            >Add to Calendar</a>
+        </div>
+      </div>
+    </section>
+    <script src="./script.js"></script>
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src =
+          'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, 'script', 'facebook-jssdk');
+    </script>
+  </body>
 </html>

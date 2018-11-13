@@ -68,3 +68,8 @@ section .hero-text p {
     font-size: 1em;
   }
 }
+
+.button.is-small {
+  font-size: 12px;
+  padding: 4px 8px;
+}
