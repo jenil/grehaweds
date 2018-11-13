@@ -4,48 +4,7 @@
 <head>
   <script src="https://unpkg.com/pace-progress@1.0.2/pace.min.js"></script>
   <style>
-    body.pace-running section, body.pace-running canvas { opacity: 0; transition: all 300ms; } body.pace-done section, body.pace-done canvas { opacity: 1; }
-
-    .pace {
-  -webkit-pointer-events: none;
-  pointer-events: none;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-.pace.pace-inactive .pace-progress {
-  display: none;
-}
-
-.pace .pace-progress {
-  position: fixed;
-  z-index: 2000;
-  top: 0;
-  right: 0;
-  height: 5rem;
-  width: 5rem;
-
-  -webkit-transform: translate3d(0, 0, 0) !important;
-  -ms-transform: translate3d(0, 0, 0) !important;
-  transform: translate3d(0, 0, 0) !important;
-}
-
-.pace .pace-progress:after {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: .5rem;
-  content: attr(data-progress-text);
-  font-family: "Helvetica Neue", sans-serif;
-  font-weight: 100;
-  font-size: 5rem;
-  line-height: 1;
-  text-align: right;
-  color: rgba(255, 255, 255, 0.8);
-}
-
+    body.pace-running section, body.pace-running canvas { opacity: 0; transition: all 300ms; } body.pace-done section, body.pace-done canvas { opacity: 1; } .pace { -webkit-pointer-events: none; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; } .pace.pace-inactive .pace-progress { display: none; } .pace .pace-progress { position: fixed; z-index: 2000; top: 0; right: 0; height: 5rem; width: 5rem; -webkit-transform: translate3d(0, 0, 0) !important; -ms-transform: translate3d(0, 0, 0) !important; transform: translate3d(0, 0, 0) !important; } .pace .pace-progress:after { display: block; position: absolute; top: 0; right: .5rem; content: attr(data-progress-text); font-family: "Helvetica Neue", sans-serif; font-weight: 100; font-size: 5rem; line-height: 1; text-align: right; color: rgba(255, 255, 255, 0.8); }
   </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +17,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Greha weds Jenil" />
   <meta property="og:description" content="2 years after their engagement and over 7 years of friendship, Greha & Jenil are getting married!" />
-  <meta property="og:image" content="https://grehaweds.jgog.in/card.png" />
+  <meta property="og:image" content="https://grehaweds.jgog.in/flyer.png" />
 </head>
 
 <body>
@@ -69,8 +28,8 @@
         are getting married on
         Jaunary 2, 2019</h1>
       <p>You are invited! Details will be sent soon.<p>
-      <div class="fb-like" data-href="https://grehaweds.jgog.in/" data-width="400" data-layout="button_count"
-        data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+          <div class="fb-like" data-href="https://grehaweds.jgog.in/" data-width="400" data-layout="button_count"
+            data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
     </div>
   </section>
   <script src="./script.js"></script>

@@ -1,5 +1,29 @@
+var PIXEL_RATIO = (function () {
+  var ctx = document.createElement("canvas").getContext("2d"),
+    dpr = window.devicePixelRatio || 1,
+    bsr = ctx.webkitBackingStorePixelRatio ||
+    ctx.mozBackingStorePixelRatio ||
+    ctx.msBackingStorePixelRatio ||
+    ctx.oBackingStorePixelRatio ||
+    ctx.backingStorePixelRatio || 1;
+
+  return dpr / bsr;
+})();
+
+function setupCanvas(canvas) {
+  canvas.style.width = window.innerWidth + "px";
+  canvas.style.height = window.innerHeight + "px";
+
+  canvas.width = window.innerWidth * 1;
+  canvas.height = window.innerHeight * 1;
+
+  var context = canvas.getContext('2d');
+  // context.scale(PIXEL_RATIO, PIXEL_RATIO)
+  return context;
+}
+
 var canvas = document.querySelector("#scene"),
-  ctx = canvas.getContext("2d"),
+  ctx = setupCanvas(canvas),
   particles = [],
   amount = 0,
   mouse = {
@@ -10,11 +34,10 @@ var canvas = document.querySelector("#scene"),
 
 var colors = ["#FFFFFF", "#98a5ab", "#789fbb", "#dbd3c2", "#eeefde"];
 
-var copy = document.querySelector("#copy");
 const TEXT = 'Save the Date';
 
-var ww = canvas.width = window.innerWidth;
-var wh = canvas.height = window.innerHeight;
+var ww = canvas.width / PIXEL_RATIO; // = window.innerWidth;
+var wh = canvas.height / PIXEL_RATIO; // = window.innerHeight;
 
 function Particle(x, y) {
   this.x = Math.random() * ww;
@@ -80,8 +103,9 @@ function onTouchEnd(e) {
 }
 
 function initScene() {
-  ww = canvas.width = window.innerWidth;
-  wh = canvas.height = window.innerHeight;
+  setupCanvas(canvas);
+  ww = window.innerWidth;
+  wh = window.innerHeight;
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   var fz = (ww / 10);

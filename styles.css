@@ -4,9 +4,10 @@
 
 body {
   background: #2c2c30;
-  background-image: url(./bg.jpg), url(./bg-sm.jpg);
+  background-image: url(./bg.png), url(./bg-sm.jpg);
   background-size: cover;
-  background-position: center center;
+  background-repeat: no-repeat;
+  background-position: bottom center;
   height: 100vh;
   position: relative;
 }
