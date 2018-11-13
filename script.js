@@ -110,14 +110,14 @@ function initScene() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   var fz = (ww / 10);
 
-  ctx.font = "bold " + fz + "px 'Dancing Script', cursive";
+  ctx.font = "bold " + fz + "px 'Tillana', cursive";
   ctx.textAlign = "center";
-
+  console.log('rendering font');
   if (ww < 480) {
-    fz *= 2;
+    fz *= 2.5;
     var lineheight = fz * 1.1;
     var lines = TEXT.split(' ');
-    ctx.font = "bold " + fz + "px 'Dancing Script', cursive";
+    ctx.font = "bold " + fz + "px 'Tillana', cursive";
 
     for (var i = 0; i < lines.length; i++)
       ctx.fillText(lines[i], (ww / 2), (wh / 2) - 175 + (i * lineheight));
@@ -165,6 +165,8 @@ window.addEventListener("touchend", onTouchEnd);
 window.onload = function () {
   console.log('loaded');
 
-  initScene();
-  requestAnimationFrame(render);
+  setTimeout(function () {
+    initScene();
+    requestAnimationFrame(render);
+  }, 500)
 }
