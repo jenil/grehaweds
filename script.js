@@ -34,7 +34,7 @@ var canvas = document.querySelector("#scene"),
 
 var colors = ["#FFFFFF", "#98a5ab", "#789fbb", "#dbd3c2", "#eeefde"];
 
-const TEXT = 'Save the Date';
+const TEXT = 'Cheers!';
 
 var ww = canvas.width / PIXEL_RATIO; // = window.innerWidth;
 var wh = canvas.height / PIXEL_RATIO; // = window.innerHeight;
